@@ -25,9 +25,9 @@ const Header = (props) => {
       <header className="header">
         <div className="header-inner">
           <div className="header-inner__name">
-            <h1 className="header-inner__name">
+            <a href="" className="header-inner__name">
               Profi<span>Sport</span>
-            </h1>
+            </a>
           </div>
           <button className="header-inner__key">
             <Key className="header-inner__key-img" alt="" />
