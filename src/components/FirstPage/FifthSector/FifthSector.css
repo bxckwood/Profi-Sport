@@ -1,0 +1,99 @@
+.fifth-sector {
+  height: 381px;
+  width: 100%;
+  background: #efefef;
+  padding: 35px 394px;
+}
+
+.fifth-sector__inner-button {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  background-color: #ffa801;
+  border-radius: 100px;
+  padding: 20px 93px;
+  transition-duration: 0.5s;
+  margin: 0 auto 20px;
+}
+
+.fifth-sector__inner-button:hover {
+  color: #ffa801;
+  background-color: white;
+  outline: 1px solid #ffa801;
+}
+
+.fifth-sector__inner-text {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+  letter-spacing: 0.015em;
+  color: #000000;
+}
+
+@media screen and (max-width: 1840px) {
+  .fifth-sector {
+    height: 381px;
+    width: 100%;
+    background: #efefef;
+    padding: 35px 200px;
+  }
+}
+
+@media screen and (max-width: 1463px) {
+  .fifth-sector {
+    height: 381px;
+    width: 100%;
+    background: #efefef;
+    padding: 35px 20px;
+  }
+}
+
+@media screen and (max-width: 962px) {
+  .fifth-sector {
+    height: auto;
+    width: 100%;
+    background: #efefef;
+    padding: 35px 20px;
+  }
+}
+
+@media screen and (max-width: 555px) {
+  .fifth-sector {
+    height: auto;
+    width: 100%;
+    background: #efefef;
+    padding: 35px 20px;
+  }
+
+  .fifth-sector__inner-button {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    background-color: #ffa801;
+    border-radius: 100px;
+    padding: 8px 20px 14px;
+    transition-duration: 0.5s;
+    margin: 0 auto 20px;
+  }
+
+  .fifth-sector__inner-text {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 25px;
+  }
+}

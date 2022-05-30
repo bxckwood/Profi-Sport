@@ -1,4 +1,5 @@
 import React from 'react';
+import FifthSector from './FifthSector/FifthSector';
 import FirstSector from './FirstSector/FirstSector';
 import FourthSector from './FourthSector/FourthSector';
 import SecondSector from './SecondSector/SecondSector';
@@ -11,6 +12,7 @@ const MainPage = props => {
             <SecondSector/>
             <ThirdSector/>
             <FourthSector/>
+            <FifthSector/>
         </>
     );
 };
