@@ -263,7 +263,12 @@
 
 @media screen and (max-width:800px) {
   .third-sector__inner-buttons {
-    gap: 10px;
+    gap: 0px;
+  }
+
+  .third-sector__inner-button {
+    gap: 0px;
+    margin-bottom: 10px;
   }
 }
 
