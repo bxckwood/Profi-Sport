@@ -4,15 +4,16 @@ import insta from "./img/insta.svg";
 import facebook from "./img/facebook.svg";
 import vk from "./img/vk.svg";
 import youtube from "./img/youtube.svg";
+import { Link } from "react-router-dom"
 
 const Footer = (props) => {
   return (
     <footer>
       <div className="footer-inner">
         <div className="footer-inner__top">
-          <a className="footer-inner__top-title" href="">
+          <Link className="footer-inner__top-title" to="/">
             Profi<span>Sport</span>
-          </a>
+          </Link>
           <h1 className="footer-inner__top-copy">© 2008—2021 PROFI SPORT</h1>
           <div className="footer-inner__top-media">
             <a href="">

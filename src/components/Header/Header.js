@@ -8,6 +8,7 @@ import BurgerMobile from "./mobileimg/burgermobile.svg";
 import TelMobile from "./mobileimg/telmobile.svg";
 import SearchMobile from "./mobileimg/searchmobile.svg";
 import PersonMobile from "./mobileimg/personmobile.svg";
+import { Link } from "react-router-dom"
 
 const Header = (props) => {
   const links = [
@@ -25,9 +26,9 @@ const Header = (props) => {
       <header className="header">
         <div className="header-inner">
           <div className="header-inner__name">
-            <a href="" className="header-inner__name">
+            <Link to="/" className="header-inner__name">
               Profi<span>Sport</span>
-            </a>
+            </Link>
           </div>
           <button className="header-inner__key">
             <Key className="header-inner__key-img" alt="" />

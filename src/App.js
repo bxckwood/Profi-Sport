@@ -1,15 +1,19 @@
-import './App.css';
-import MainPage from './components/FirstPage/FirstPage';
-import Footer from './components/Footer/Footer';
-import Header from './components/Header/Header';
+import "./App.css";
+import MainPage from "./components/FirstPage/FirstPage";
+import { Routes, Route, Link } from "react-router-dom";
+import NotFoundPage from "./components/NotFoundPage/NotFoundPage";
+import Layout from "./components/Layout";
 
 function App() {
   return (
-    <div className="App">
-      <Header/>
-      <MainPage/>
-      <Footer/>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Layout/>}>
+        <Route path="/" element={<MainPage />} />
+        <Route path="*" element={<NotFoundPage/>} />
+        </Route>
+      </Routes>
+    </>
   );
 }
 
