@@ -3,7 +3,7 @@ import FifthSector from './FifthSector/FifthSector';
 import FirstSector from './FirstSector/FirstSector';
 import FourthSector from './FourthSector/FourthSector';
 import SecondSector from './SecondSector/SecondSector';
-import SixthPage from './SixthPage/SixthPage';
+import SixthSector from './SixthSector/SixthSector';
 import ThirdSector from './ThirdSector/ThirdSector';
 
 const MainPage = props => {
@@ -14,7 +14,7 @@ const MainPage = props => {
             <ThirdSector/>
             <FourthSector/>
             <FifthSector/>
-            <SixthPage/>
+            <SixthSector/>
         </>
     );
 };

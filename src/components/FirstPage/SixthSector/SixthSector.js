@@ -1,11 +1,11 @@
 import React from "react";
-import "./SixthPage.css";
+import "./SixthSector.css";
 import hover from "./img/hover.png";
 import photo from "./img/photo.png";
 import triangle from "./img/triangle.svg";
 import arrow from "./img/arrow.svg";
 
-const SixPage = (props) => {
+const SixthSector = (props) => {
   const catalogy = [
     { name: "УЛИЧНОЕ ОБОРУДОВАНИЕ", href: "" },
     { name: "Оборудование для залов", href: "" },
@@ -61,4 +61,4 @@ const SixPage = (props) => {
   );
 };
 
-export default SixPage;
+export default SixthSector;
