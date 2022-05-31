@@ -9,6 +9,7 @@ import { Link } from "react-router-dom"
 const Footer = (props) => {
   return (
     <footer>
+      <a name="contact"></a>
       <div className="footer-inner">
         <div className="footer-inner__top">
           <Link className="footer-inner__top-title" to="/">

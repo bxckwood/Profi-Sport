@@ -4,6 +4,7 @@ import "./FifthSector.css";
 const FifthSector = (props) => {
   return (
     <div className="fifth-sector">
+      <a name="services"></a>
       <div className="fifth-sector__inner">
         <button className="fifth-sector__inner-button">
           Комплекс услуг по октрытию фитнес-клуба

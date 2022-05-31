@@ -45,6 +45,7 @@ const ThirdSector = (props) => {
 
   return (
     <div className="third-sector">
+      <a name="projects"></a>
       <div className="third-sector__inner">
         <div className="line1"></div>
         <div className="line2"></div>

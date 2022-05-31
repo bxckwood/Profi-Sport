@@ -1,0 +1,86 @@
+[
+  {
+    "id": 0,
+    "available": true,
+    "name": "905 Жим от груди (Chest Press)",
+    "filters": [0, 1],
+    "price": 150000
+  },
+  {
+    "id": 1,
+    "available": true,
+    "name": "908 Жим от груди (Chest Press)",
+    "filters": [0, 5],
+    "price": 120000
+  },
+  {
+    "id": 2,
+    "available": true,
+    "name": "910 Пресс (Chest Press)",
+    "filters": [0, 8],
+    "price": 190000
+  },
+  {
+    "id": 3,
+    "available": true,
+    "name": "480 Жим от груди (Chest Press)",
+    "filters": [0, 1, 5],
+    "price": 160000
+  },
+  {
+    "id": 4,
+    "available": false,
+    "name": "702 Подъем рук (Chest Press)",
+    "filters": [0, 1, 2],
+    "price": 120000
+  },
+  {
+    "id": 5,
+    "available": true,
+    "name": "801 Становая (Chest Press)",
+    "filters": [0, 3, 6],
+    "price": 150500
+  },
+  {
+    "id": 6,
+    "available": false,
+    "name": "905 Приседания (Chest Press)",
+    "filters": [0, 3, 8],
+    "price": 110000
+  },
+  {
+    "id": 7,
+    "available": true,
+    "name": "745 Тяга (Chest Press)",
+    "filters": [0, 1, 3],
+    "price": 500000
+  },
+  {
+    "id": 8,
+    "available": true,
+    "name": "120 Жим под углом (Chest Press)",
+    "filters": [0, 1, 7],
+    "price": 800000
+  },
+  {
+    "id": 9,
+    "available": true,
+    "name": "905 Жим ногами(Chest Press)",
+    "filters": [0, 1, 7],
+    "price": 523400
+  },
+  {
+    "id": 10,
+    "available": false,
+    "name": "905 Жим сидя (Chest Press)",
+    "filters": [0, 1, 7],
+    "price": 555000
+  },
+  {
+    "id": 11,
+    "available": false,
+    "name": "905 Подъем ногами (Chest Press)",
+    "filters": [0, 1, 7],
+    "price": 300000
+  }
+]

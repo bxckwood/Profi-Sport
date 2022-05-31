@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 const Header = (props) => {
   const links = [
     { title: "О компании", address: "#company" },
-    { title: "Каталог", address: "#catalog" },
+    { title: "Каталог", address: "catalog" },
     { title: "Проекты", address: "#projects" },
     { title: "Услуги", address: "#services" },
     { title: "Контакты", address: "#contact" },
@@ -36,9 +36,25 @@ const Header = (props) => {
           </button>
           <nav className="header-inner__links">
             {links.map((elem, index) => (
-              <a key={index} className="header-inner__link" href={elem.address}>
-                {elem.title}
-              </a>
+              <>
+                {elem.address[0] !== "#" ? (
+                  <Link
+                    key={index}
+                    className="header-inner__link"
+                    to={elem.address}
+                  >
+                    {elem.title}
+                  </Link>
+                ) : (
+                  <a
+                    key={index}
+                    className="header-inner__link"
+                    href={elem.address}
+                  >
+                    {elem.title}
+                  </a>
+                )}
+              </>
             ))}
           </nav>
           <div className="header-inner__call-all">
@@ -109,18 +125,43 @@ const Header = (props) => {
         </div>
         <div className={burgerActive ? "burgerMenuActive" : "burgerMenuActive"}>
           <h1 className="header-inner__name">
-            <Link onClick={() => setBurgerActive(false)} to="/" className="header-inner__name">
+            <Link
+              onClick={() => setBurgerActive(false)}
+              to="/"
+              className="header-inner__name"
+            >
               Profi<span>Sport</span>
             </Link>
           </h1>
           <nav className="header-inner__links">
             {links.map((elem, index) => (
-              <a onClick={() => setBurgerActive(false)} key={index} className="header-inner__link" href={elem.address}>
-                {elem.title}
-              </a>
+              <>
+                {elem.address[0] !== "#" ? (
+                  <Link
+                    key={index}
+                    className="header-inner__link"
+                    to={elem.address}
+                    onClick={() => setBurgerActive(false)}
+                  >
+                    {elem.title}
+                  </Link>
+                ) : (
+                  <a
+                    key={index}
+                    className="header-inner__link"
+                    href={elem.address}
+                    onClick={() => setBurgerActive(false)}
+                  >
+                    {elem.title}
+                  </a>
+                )}
+              </>
             ))}
           </nav>
-          <button onClick={() => setBurgerActive(false)} className="header-inner__key">
+          <button
+            onClick={() => setBurgerActive(false)}
+            className="header-inner__key"
+          >
             <Key className="header-inner__key-img" alt="" />
             <h1 className="header-inner__key-h1">Зал «под ключ» </h1>
           </button>
