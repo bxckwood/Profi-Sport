@@ -108,9 +108,9 @@ const Header = (props) => {
           </div>
         </div>
         <div className={burgerActive ? "burgerMenuActive" : "burgerMenuActive"}>
-          <h1 className="header-inner__name">
+          <Link to="/" className="header-inner__name">
             Profi<span>Sport</span>
-          </h1>
+          </Link>
           <nav className="header-inner__links">
             {links.map((elem, index) => (
               <a key={index} className="header-inner__link" href={elem.address}>
