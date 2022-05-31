@@ -8,7 +8,7 @@ import BurgerMobile from "./mobileimg/burgermobile.svg";
 import TelMobile from "./mobileimg/telmobile.svg";
 import SearchMobile from "./mobileimg/searchmobile.svg";
 import PersonMobile from "./mobileimg/personmobile.svg";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 const Header = (props) => {
   const links = [
@@ -108,17 +108,19 @@ const Header = (props) => {
           </div>
         </div>
         <div className={burgerActive ? "burgerMenuActive" : "burgerMenuActive"}>
-          <Link to="/" className="header-inner__name">
-            Profi<span>Sport</span>
-          </Link>
+          <h1 className="header-inner__name">
+            <Link onClick={() => setBurgerActive(false)} to="/" className="header-inner__name">
+              Profi<span>Sport</span>
+            </Link>
+          </h1>
           <nav className="header-inner__links">
             {links.map((elem, index) => (
-              <a key={index} className="header-inner__link" href={elem.address}>
+              <a onClick={() => setBurgerActive(false)} key={index} className="header-inner__link" href={elem.address}>
                 {elem.title}
               </a>
             ))}
           </nav>
-          <button className="header-inner__key">
+          <button onClick={() => setBurgerActive(false)} className="header-inner__key">
             <Key className="header-inner__key-img" alt="" />
             <h1 className="header-inner__key-h1">Зал «под ключ» </h1>
           </button>
