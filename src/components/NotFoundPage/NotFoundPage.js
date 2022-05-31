@@ -1,5 +1,6 @@
 import React from "react";
 import "./NotFoundPage.css";
+import { Link } from "react-router-dom"
 
 const NotFoundPage = (props) => {
   return (
@@ -16,8 +17,8 @@ const NotFoundPage = (props) => {
             Ошибка 404! Страница не найдена!
           </h1>
           <div className="NotFoundPage-inner-buttons">
-            <button className="NotFoundPage-inner-button">На главную</button>
-            <button className="NotFoundPage-inner-button">В каталог</button>
+            <Link to="/" className="NotFoundPage-inner-button">На главную</Link>
+            <a href="" className="NotFoundPage-inner-button">В каталог</a>
           </div>
         </div>
       </div>
