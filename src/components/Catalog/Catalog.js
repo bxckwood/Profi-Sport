@@ -23,6 +23,7 @@ const Catalog = () => {
   ];
 
   const [activeFilter, setActiveFilter] = useState(false);
+  const [activeModalFilter, setActiveModailFilter] = useState(false)
 
   return (
     <div className="catalog">
@@ -45,13 +46,28 @@ const Catalog = () => {
               </p>
             ))}
           </div>
+          <div className={activeModalFilter ? "catalog-inner__filters__Mobile true" :  "catalog-inner__filters__Mobile"}>
+            <h1 onClick={() => setActiveModailFilter(!activeModalFilter)} className="catalog-inner__filters-title"><h1>Фильтры</h1><img src={arrow} alt=""/></h1>
+
+            {filters.map((elem, index) => (
+              <p
+                onClick={() => setActiveFilter(index)}
+                className={
+                  index === activeFilter
+                    ? "catalog-inner__filter active"
+                    : "catalog-inner__filter"
+                }
+                key={index}
+              >
+                {elem}
+              </p>
+            ))}
+          </div>
           <div className="catalog-inner__sort-and-elements">
             <div className="catalog-inner__sort">
               <h1>Сортировка</h1>
               <button>
-                <h2>
-                По цене
-                </h2>
+                <h2>По цене</h2>
                 <img src={arrow} alt="" />
               </button>
             </div>
