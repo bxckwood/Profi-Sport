@@ -276,8 +276,6 @@
     margin-left: 0;
   }
 
-  
-
   .catalog-inner__filters__Mobile {
     display: block;
     height: 46px;
@@ -291,12 +289,12 @@
     margin-bottom: 40px;
     align-items: center;
     position: absolute;
-    z-index: 1500;
+    z-index: 3;
     margin-left: auto;
-margin-right: auto;
-left: 0;
-right: 0;
-text-align: center;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
   }
 
   .catalog-inner__filters-title {
