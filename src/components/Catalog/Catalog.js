@@ -3,6 +3,7 @@ import "./Catalog.css";
 import simulators from "../simulator.json";
 import simulatorphoto from "./img/simulatorphoto.png";
 import arrow from "./img/arrow.svg";
+import { Link } from "react-router-dom"
 
 const Catalog = () => {
   const filters = [
@@ -22,11 +23,15 @@ const Catalog = () => {
     "DHZ HAMMER-Series",
   ];
 
-  const [activeFilter, setActiveFilter] = useState(0);
-  const [activeModalFilter, setActiveModailFilter] = useState(0);
+  const sort = ["По цене"];
 
-  const filter1 = (items) => items.filter((elem) => elem.filters.includes(activeFilter))
-  
+  const [activeFilter, setActiveFilter] = useState(0);
+  const [activeSort, setActiveSort] = useState(0);
+  const [activeModalFilter, setActiveModalFilter] = useState(false);
+
+  const filter1 = (items) =>
+    items.filter((elem) => elem.filters.includes(activeFilter));
+
   return (
     <div className="catalog">
       <div className="catalog-inner">
@@ -56,7 +61,7 @@ const Catalog = () => {
             }
           >
             <h1
-              onClick={() => setActiveModailFilter(!activeModalFilter)}
+              onClick={() => setActiveModalFilter(!activeModalFilter)}
               className="catalog-inner__filters-title"
             >
               <h1>Фильтры</h1>
@@ -77,17 +82,22 @@ const Catalog = () => {
             ))}
           </div>
           <div className="catalog-inner__sort-and-elements">
-            <div className="catalog-inner__sort">
+            <div onClick={() => {}} className="catalog-inner__sort">
               <h1>Сортировка</h1>
               <button>
-                <h2>По цене</h2>
-                <img src={arrow} alt="" />
+                {sort.map((elem, index) => (
+                  <h2 onClick={() => setActiveSort(index)} key={index}>
+                    {elem}
+                    <img src={arrow} alt="" />
+                  </h2>
+                ))}
               </button>
             </div>
             <div className="catalog-inner__elements">
               <div className="catalog-inner__items">
                 {filter1(simulators).map((elem, index) => (
-                  <div key={index} className="catalog-inner__item">
+                  <Link to={`${elem.id}`} key={index} className="catalog-inner__item">
+                    
                     <img src={simulatorphoto} alt="" />
                     <div className="catalog-inner__item-name">
                       <h1 className="catalog-inner__item-name-text">
@@ -114,7 +124,7 @@ const Catalog = () => {
                         <button disabled>КУПИТЬ</button>
                       )}
                     </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
             </div>

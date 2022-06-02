@@ -234,6 +234,12 @@
   display: none;
 }
 
+.catalog-inner__sort button{
+  display: flex;
+ align-items: center;
+}
+
+
 @media screen and (max-width: 1839px) {
   .catalog {
     padding-left: 200px;

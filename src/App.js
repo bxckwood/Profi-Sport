@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import NotFoundPage from "./components/NotFoundPage/NotFoundPage";
 import Layout from "./components/Layout";
 import Catalog from "./components/Catalog/Catalog";
+import ItemPage from "./components/ItemPage/ItemPage";
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="/" element={<MainPage />} />
-          <Route path="/catalog"  element={<Catalog/>} />
+          <Route path="catalog"  element={<Catalog/>} />
+          <Route path="catalog/:id" element={<ItemPage/>}/>
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
