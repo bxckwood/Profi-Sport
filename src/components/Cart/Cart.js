@@ -68,11 +68,13 @@ const Cart = () => {
                 <button className="clear-column-button">Очистить</button>
               </div>
               <div className="result-column">ИТОГО:</div>
-              <div className="quantity-column">1</div>
+              <div className="quantity-column">{cartElems.length}</div>
               <div className="cost-column">{cartElems.reduce((acc, currentValue) => acc + currentValue.price, 0) / 1000}К РУБ.</div>
             </div>
           </div>
           <div className="mobile-items">
+            
+            {cartElems.map((elem,index) => 
             <div className="item">
               <div className="item__photo">
                 <img src={biceps} alt="" />
@@ -80,25 +82,24 @@ const Cart = () => {
               <div className="item__right-group">
                 <div className="item__right-group-top">
                   <h1>
-                    Гантель в виниловой оболочке PROFI-FIT 3 кг, форма
-                    шестигранник, серый
+                    {elem.name}
                   </h1>
                   <img src={cross} alt="" />
                 </div>
                 <div className="item__right-group-bottom">
                   <div>
                     <button>-</button>
-                    <h1>2</h1>
+                    <h1>1</h1>
                     <button>+</button>
                   </div>
-                  <h1 className="price"> 1580 РУБ.</h1>
+                  <h1 className="price"> {elem.price / 1000} К РУБ.</h1>
                 </div>
               </div>
-            </div>
+            </div>)}
             <div className="mobile-columns">
               <div className="result-column">ИТОГО:</div>
-              <div className="quantity-column">4</div>
-              <div className="cost-column">4740К РУБ.</div>
+              <div className="quantity-column">{cartElems.length}</div>
+              <div className="cost-column">{cartElems.reduce((acc, currentValue) => acc + currentValue.price, 0) / 1000}К РУБ.</div>
             </div>
             <div className="clear-column2">
               <button className="clear-column-button">Очистить</button>
