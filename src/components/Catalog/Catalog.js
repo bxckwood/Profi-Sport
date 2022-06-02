@@ -22,9 +22,11 @@ const Catalog = () => {
     "DHZ HAMMER-Series",
   ];
 
-  const [activeFilter, setActiveFilter] = useState(false);
-  const [activeModalFilter, setActiveModailFilter] = useState(false)
+  const [activeFilter, setActiveFilter] = useState(0);
+  const [activeModalFilter, setActiveModailFilter] = useState(0);
 
+  const filter1 = (items) => items.filter((elem) => elem.filters.includes(activeFilter))
+  
   return (
     <div className="catalog">
       <div className="catalog-inner">
@@ -46,9 +48,20 @@ const Catalog = () => {
               </p>
             ))}
           </div>
-          <div className={activeModalFilter ? "catalog-inner__filters__Mobile true" :  "catalog-inner__filters__Mobile"}>
-            <h1 onClick={() => setActiveModailFilter(!activeModalFilter)} className="catalog-inner__filters-title"><h1>Фильтры</h1><img src={arrow} alt=""/></h1>
-
+          <div
+            className={
+              activeModalFilter
+                ? "catalog-inner__filters__Mobile true"
+                : "catalog-inner__filters__Mobile"
+            }
+          >
+            <h1
+              onClick={() => setActiveModailFilter(!activeModalFilter)}
+              className="catalog-inner__filters-title"
+            >
+              <h1>Фильтры</h1>
+              <img src={arrow} alt="" />
+            </h1>
             {filters.map((elem, index) => (
               <p
                 onClick={() => setActiveFilter(index)}
@@ -73,7 +86,7 @@ const Catalog = () => {
             </div>
             <div className="catalog-inner__elements">
               <div className="catalog-inner__items">
-                {simulators.map((elem, index) => (
+                {filter1(simulators).map((elem, index) => (
                   <div key={index} className="catalog-inner__item">
                     <img src={simulatorphoto} alt="" />
                     <div className="catalog-inner__item-name">
