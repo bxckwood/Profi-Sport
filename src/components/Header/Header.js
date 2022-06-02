@@ -21,9 +21,11 @@ const Header = (props) => {
 
   const [burgerActive, setBurgerActive] = useState(false);
 
+
   return (
     <>
       <header className="header">
+        
         <div className="header-inner">
           <div className="header-inner__name">
             <Link to="/" className="header-inner__name">

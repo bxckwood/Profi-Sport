@@ -26,7 +26,6 @@ const Catalog = () => {
   const sort = ["По цене"];
 
   const [activeFilter, setActiveFilter] = useState(0);
-  const [activeSort, setActiveSort] = useState(0);
   const [activeModalFilter, setActiveModalFilter] = useState(false);
 
   const filter1 = (items) =>
@@ -89,7 +88,7 @@ const Catalog = () => {
               <h1>Сортировка</h1>
               <button>
                 {sort.map((elem, index) => (
-                  <h2 onClick={() => setActiveSort(index)} key={index}>
+                  <h2 key={index}>
                     {elem}
                     <img src={arrow} alt="" />
                   </h2>

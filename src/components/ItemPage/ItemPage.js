@@ -2,11 +2,19 @@ import React from "react";
 import { useParams, Link } from "react-router-dom";
 import "./ItemPage.css";
 import biceps from "./img/biceps.png";
-import small from "./img/small.png";
 import simulators from "../simulator.json";
+import { useDispatch, useSelector} from "react-redux"
+
 
 const ItemPage = () => {
   const simulator = simulators[useParams().id];
+
+  const dispatch = useDispatch()
+  const cartElems = useSelector(state => state.cartElems)
+
+  const addItemToCart = () => {
+    dispatch({type: "ADD_ITEM", payload: simulator})
+  }
 
   return (
     <div className="item-page">
@@ -75,9 +83,9 @@ const ItemPage = () => {
                 )}
               </h1>
               {simulator.available ? (
-                <button onClick={() => console.log(1)}>КУПИТЬ</button>
+                <Link to="/cart" onClick={addItemToCart}>ДОБАВИТЬ В КОРЗИНУ</Link>
               ) : (
-                <button disabled>КУПИТЬ</button>
+                null
               )}
             </div>
           </div>

@@ -111,7 +111,7 @@ tr {
   color: #152536;
 }
 
-.inner__card__right-group__bottom button {
+.inner__card__right-group__bottom a {
   background: #ffa801;
   border-radius: 100px;
   font-style: normal;
@@ -126,7 +126,7 @@ tr {
   transition-duration: 0.5s;
 }
 
-.inner__card__right-group__bottom button:hover {
+.inner__card__right-group__bottom a:hover {
   background: white;
   outline: 1px solid #ffa801;
   color: #ffa801;
