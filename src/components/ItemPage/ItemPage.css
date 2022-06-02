@@ -123,6 +123,13 @@ tr {
   display: inline-block;
   padding: 14px 45px;
   margin-top: 15px;
+  transition-duration: 0.5s;
+}
+
+.inner__card__right-group__bottom button:hover {
+  background: white;
+  outline: 1px solid #ffa801;
+  color: #ffa801;
 }
 
 .available {
@@ -135,6 +142,11 @@ tr {
   margin-left: 5px;
   color: gray;
   font-weight: 600;
+}
+
+button:disabled {
+  background-color: gray;
+  pointer-events: none;
 }
 
 @media screen and (max-width: 1463px) {

@@ -5,7 +5,6 @@ import biceps from "./img/biceps.png";
 import small from "./img/small.png";
 import simulators from "../simulator.json";
 
-
 const ItemPage = () => {
   const simulator = simulators[useParams().id];
 
@@ -68,9 +67,18 @@ const ItemPage = () => {
             <div className="inner__card__right-group__bottom">
               <p>{simulator.price} руб.</p>
               <h1>
-                Наличие: {simulator.available ? <span className="available">на складе</span> : <span className="notavailable">отсуствует</span>}
+                Наличие:{" "}
+                {simulator.available ? (
+                  <span className="available">на складе</span>
+                ) : (
+                  <span className="notavailable">отсуствует</span>
+                )}
               </h1>
-              <button>КУПИТЬ</button>
+              {simulator.available ? (
+                <button onClick={() => console.log(1)}>КУПИТЬ</button>
+              ) : (
+                <button disabled>КУПИТЬ</button>
+              )}
             </div>
           </div>
         </div>

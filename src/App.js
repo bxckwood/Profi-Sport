@@ -5,6 +5,7 @@ import NotFoundPage from "./components/NotFoundPage/NotFoundPage";
 import Layout from "./components/Layout";
 import Catalog from "./components/Catalog/Catalog";
 import ItemPage from "./components/ItemPage/ItemPage";
+import Cart from "./components/Cart/Cart";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<MainPage />} />
           <Route path="catalog"  element={<Catalog/>} />
           <Route path="catalog/:id" element={<ItemPage/>}/>
+          <Route path="cart" element={<Cart/>}/>
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>

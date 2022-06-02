@@ -16,7 +16,7 @@ const Header = (props) => {
     { title: "Каталог", address: "catalog" },
     { title: "Проекты", address: "#projects" },
     { title: "Услуги", address: "#services" },
-    { title: "Корзина", address: "#contact" },
+    { title: "Корзина", address: "cart" },
   ];
 
   const [burgerActive, setBurgerActive] = useState(false);

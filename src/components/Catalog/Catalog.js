@@ -3,7 +3,7 @@ import "./Catalog.css";
 import simulators from "../simulator.json";
 import simulatorphoto from "./img/simulatorphoto.png";
 import arrow from "./img/arrow.svg";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 const Catalog = () => {
   const filters = [
@@ -69,7 +69,10 @@ const Catalog = () => {
             </h1>
             {filters.map((elem, index) => (
               <p
-                onClick={() => setActiveFilter(index)}
+                onClick={() => {
+                  setActiveFilter(index);
+                  setActiveModalFilter(false);
+                }}
                 className={
                   index === activeFilter
                     ? "catalog-inner__filter active"
@@ -96,8 +99,11 @@ const Catalog = () => {
             <div className="catalog-inner__elements">
               <div className="catalog-inner__items">
                 {filter1(simulators).map((elem, index) => (
-                  <Link to={`${elem.id}`} key={index} className="catalog-inner__item">
-                    
+                  <Link
+                    to={`${elem.id}`}
+                    key={index}
+                    className="catalog-inner__item"
+                  >
                     <img src={simulatorphoto} alt="" />
                     <div className="catalog-inner__item-name">
                       <h1 className="catalog-inner__item-name-text">
