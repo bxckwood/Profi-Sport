@@ -10,7 +10,6 @@ const ItemPage = () => {
   const simulator = simulators[useParams().id];
 
   const dispatch = useDispatch()
-  const cartElems = useSelector(state => state.cartElems)
 
   const addItemToCart = () => {
     dispatch({type: "ADD_ITEM", payload: simulator})
