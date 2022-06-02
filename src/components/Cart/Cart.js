@@ -101,9 +101,9 @@ const Cart = () => {
                   </div>
                   <div className="item__right-group-bottom">
                     <div>
-                      <button>-</button>
+                      <button onClick={() => removeItemFromCart(elem)}>-</button>
                       <h1>1</h1>
-                      <button>+</button>
+                      <button onClick={() => addItemToCartInCart(elem)}>+</button>
                     </div>
                     <h1 className="price"> {elem.price / 1000} К РУБ.</h1>
                   </div>
