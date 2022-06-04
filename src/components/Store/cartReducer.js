@@ -5,7 +5,7 @@ const itemDefaultState = {
   cartElems: [],
 };
 
-/* xport const cartReducer = createReducer([], (builder) => {
+/* export const cartReducer = createReducer([], (builder) => {
   builder.addCase("ADD_ITEM", (state, action) => {
     if (state.includes({count: 1, action: action.payload.payload})) {
       const index = state.findIndex(
