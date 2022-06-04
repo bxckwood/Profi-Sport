@@ -9,14 +9,12 @@ const Cart = () => {
 
   const dispatch = useDispatch()
 
-  console.log(cartElems)
-
   const addItemToCartInCart = (elem) => {
     dispatch({type: "ADD_COUNT", payload: elem})
   }
 
   const removeItemFromCart = (elem) => {
-    dispatch({type: "",payload: elem})
+    dispatch({type: "REMOVE_ITEM", payload: elem})
 }
 
   const removeAllItemsFromCart = () => {

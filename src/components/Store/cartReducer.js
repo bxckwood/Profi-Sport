@@ -28,7 +28,6 @@ export const cartReducer = (state = itemDefaultState, action) => {
     case "ADD_COUNT":
       const index1 = state.cartElems.indexOf(action.payload)
       const bebra = state.cartElems[index1].count
-      const bebra2 = state.cartElems[index1]
       return {
         ...state, cartElems: [...state.cartElems.slice(0,index1), {count: bebra + 1 , action: action.payload}, ...state.cartElems.slice(index1+1,state.cartElems.length + 1)]
       }
@@ -38,11 +37,17 @@ export const cartReducer = (state = itemDefaultState, action) => {
         cartElems: [],
       };
     case "REMOVE_ITEM":
-      const index = state.cartElems.findIndex(
-        (elem) => elem === action.payload
-      );
-      state.cartElems[index].count = state.cartElems[index].count - 1;
-      return { ...state };
+      const index2 = state.cartElems.indexOf(action.payload)
+      const bebra3 = state.cartElems[index2].count
+      if (bebra3 > 1) {
+        return {
+          ...state, cartElems: [...state.cartElems.slice(0,index2), {count: bebra3 - 1 , action: action.payload}, ...state.cartElems.slice(index2+1,state.cartElems.length + 1)]
+        }
+      } else {
+        return {
+          ...state, cartElems: [...state.cartElems.slice(0,index2),...state.cartElems.slice(index2+1,state.cartElems.length + 1)]
+        }
+      }
     default:
       return state;
   }
