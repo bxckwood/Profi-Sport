@@ -11,7 +11,7 @@ const ItemPage = () => {
 
   const dispatch = useDispatch()
 
-  const addItemToCart = () => {
+  const addItemToCart = (e) => {
     dispatch({type: "ADD_ITEM", payload: simulator})
   }
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Cart.css";
 import biceps from "./img/biceps.png";
 import cross from "./img/cross.svg";
@@ -9,12 +9,18 @@ const Cart = () => {
 
   const dispatch = useDispatch()
 
+  console.log(cartElems)
+
   const addItemToCartInCart = (elem) => {
     dispatch({type: "ADD_ITEM", payload: elem})
   }
 
   const removeItemFromCart = (elem) => {
-      dispatch({type: "REMOVE_ITEM", payload: elem.id})
+    dispatch({type: "",payload: elem})
+}
+
+  const removeAllItemsFromCart = () => {
+      dispatch({type: "",payload: ""})
   }
 
   return (
@@ -60,12 +66,12 @@ const Cart = () => {
                   <th className="fourth-column">
                     <div>
                       <button onClick={() => removeItemFromCart(elem)}>-</button>
-                      <h1>1</h1>
+                      <h1>{elem.count}</h1>
                       <button onClick={() => addItemToCartInCart(elem)}>+</button>
                     </div>
                   </th>
                   <th className="fifth-column">
-                    <div>{elem.price / 1000}К РУБ.</div>
+                    <div>{elem.price * elem.count / 1000}К РУБ.</div>
                   </th>
                   <th className="sixth-column">
                     <img src={cross} alt="" />
@@ -75,10 +81,13 @@ const Cart = () => {
             </table>
             <div className="columns">
               <div className="clear-column">
-                <button className="clear-column-button">Очистить</button>
+                <button className="clear-column-button"  onClick={() => removeAllItemsFromCart()}>Очистить</button>
               </div>
               <div className="result-column">ИТОГО:</div>
-              <div className="quantity-column">{cartElems.length}</div>
+              <div className="quantity-column">{cartElems.reduce(
+                  (acc, currentValue) => acc + currentValue.count,
+                  0
+                )}</div>
               <div className="cost-column">
                 {cartElems.reduce(
                   (acc, currentValue) => acc + currentValue.price,
@@ -101,7 +110,7 @@ const Cart = () => {
                   </div>
                   <div className="item__right-group-bottom">
                     <div>
-                      <button onClick={() => removeItemFromCart(elem)}>-</button>
+                      <button >-</button>
                       <h1>1</h1>
                       <button onClick={() => addItemToCartInCart(elem)}>+</button>
                     </div>
@@ -112,7 +121,10 @@ const Cart = () => {
             ))}
             <div className="mobile-columns">
               <div className="result-column">ИТОГО:</div>
-              <div className="quantity-column">{cartElems.length}</div>
+              <div className="quantity-column">{cartElems.reduce(
+                  (acc, currentValue) => acc + currentValue.count,
+                  0
+                )}</div>
               <div className="cost-column">
                 {cartElems.reduce(
                   (acc, currentValue) => acc + currentValue.price,
@@ -122,7 +134,7 @@ const Cart = () => {
               </div>
             </div>
             <div className="clear-column2">
-              <button className="clear-column-button">Очистить</button>
+              <button className="clear-column-button" onClick={() => removeAllItemsFromCart()}>Очистить</button>
             </div>
           </div>
         </div></>
