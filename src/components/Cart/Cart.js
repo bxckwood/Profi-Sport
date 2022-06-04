@@ -12,7 +12,7 @@ const Cart = () => {
   console.log(cartElems)
 
   const addItemToCartInCart = (elem) => {
-    dispatch({type: "ADD_ITEM", payload: elem})
+    dispatch({type: "ADD_COUNT", payload: elem})
   }
 
   const removeItemFromCart = (elem) => {
@@ -111,7 +111,7 @@ const Cart = () => {
                   <div className="item__right-group-bottom">
                     <div>
                       <button >-</button>
-                      <h1>1</h1>
+                      <h1>{elem.count}</h1>
                       <button onClick={() => addItemToCartInCart(elem)}>+</button>
                     </div>
                     <h1 className="price"> {elem.price / 1000} К РУБ.</h1>
